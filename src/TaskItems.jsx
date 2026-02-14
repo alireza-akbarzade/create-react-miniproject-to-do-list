@@ -20,8 +20,10 @@ const TaskItems = () => {
 
 
     }
-
-    return (
+{
+    if(taskItem.length){
+        return (
+        
         <ul className="list-group m-0 p-0 mt-2">
             {taskItem.map((item) => (
                 <li className={`list-group-item d-flex justify-content-between ${item.done ? "list-group-item-success" : ""}`}>
@@ -46,6 +48,16 @@ const TaskItems = () => {
 
         </ul>
     )
+    }else {
+        return (
+             <div className='mt-2  text-danger' >
+    <h4>هیچ کاری برای انجام دادن وجود ندارد . . . </h4>
+    </div>
+        )
+   
+    }
+}
+    
 }
 
 export default TaskItems;
